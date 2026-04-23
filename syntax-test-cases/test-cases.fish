@@ -26,6 +26,10 @@ echo "$(ls $(pwd)) $bar"
 # that are wrapped in double-quoted strings.
 echo "$(ls ~/mydirectory)"
 
+# Fix redirections in command substitutions that are wrapped in a double-quoted string.
+echo "$(ls ~/mydirectory 2>file)"
+echo "$(ls ~/mydirectory 2>~/file)"
+
 # Fix opening parentheses being misinterpreted as command substitution in double-quoted strings.
 # (fixed in tree-sitter-fish f435b0bd, the following lines don't cause errors anymore)
 foo "()"
