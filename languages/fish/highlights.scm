@@ -29,6 +29,8 @@
 (command name: (word) @function)
 (command argument: (word) @constant (#match? @constant "^-."))
 (command argument: (concatenation . (word) @constant (#match? @constant "^-.")))
+(command redirect: (file_redirect destination: (word) @operator))
+(command redirect: (file_redirect destination: (concatenation (word) @operator)))
 
 ; match operators of test command
 (command
